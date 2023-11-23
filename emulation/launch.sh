@@ -4,9 +4,9 @@
 qemu-system-aarch64 \
     -M raspi3b \
     -cpu cortex-a53 \
-    -append "rw earlyprintk loglevel=8 console=ttyAMA0,115200 dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2 rootdelay=1" \
-    -dtb bcm2710-rpi-3-b-plus.dtb \
-    -drive format=raw file=~/os/build/tmp/deploy/images/raspberrypi3-64/core-image-full-cmdline-raspberrypi3-64.rootfs-20231122164440.ext4 \
+    -append "$(cat ~/os/build/tmp/deploy/images/raspberrypi3-64/bootfiles/cmdline.txt)" \
+    -dtb  ~/os/build/tmp/deploy/images/raspberrypi3-64/bcm2710-rpi-3-b-plus.dtb \
+    -drive format=raw,if=virtio,file=~/os/build/tmp/deploy/images/raspberrypi3-64/core-image-full-cmdline-raspberrypi3-64.rootfs-20231122164440.ext4 \
     -kernel ~/os/build/tmp/deploy/images/raspberrypi3-64/Image-raspberrypi3-64.bin \
     -m 1G -smp 4 \
     -serial stdio \
