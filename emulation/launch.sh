@@ -9,5 +9,4 @@ qemu-system-aarch64 \
     -drive format=raw,if=virtio,file=/home/ssm-user/os/build/tmp/deploy/images/raspberrypi3-64/core-image-full-cmdline-raspberrypi3-64.rootfs-20231122164440.ext4 \
     -kernel /home/ssm-user/os/build/tmp/deploy/images/raspberrypi3-64/Image-raspberrypi3-64.bin \
     -m 1G -smp 4 \
-    -serial stdio \
-    -nographic \
+    -nographic
