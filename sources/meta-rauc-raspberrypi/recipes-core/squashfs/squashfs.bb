@@ -1,3 +1,5 @@
+LICENSE = "MIT"
+
 inherit overlayfs overlayfs-etc
 
 OVERLAYFS_ETC_MOUNT_POINT ?= "/data"
