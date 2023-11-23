@@ -13,3 +13,4 @@ qemu-system-aarch64 \
     -usb -device usb-mouse -device usb-kbd \
 	-device usb-net,netdev=net0 \
 	-netdev user,id=net0,hostfwd=tcp::5555-:22 \
+	-nographic
