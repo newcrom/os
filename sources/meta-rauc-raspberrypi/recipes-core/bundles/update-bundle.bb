@@ -2,7 +2,7 @@ DESCRIPTION = "Bundle generator"
 
 inherit bundle
 
-RAUC_BUNDLE_COMPATIBLE = "RaspberryCM3+"
+RAUC_BUNDLE_COMPATIBLE = "RaspberryPiCM3+"
 RAUC_BUNDLE_VERSION = "v20231125"
 RAUC_BUNDLE_DESCRIPTION = "Alltesta Bundle"
 RAUC_BUNDLE_SLOTS = "rootfs" 
