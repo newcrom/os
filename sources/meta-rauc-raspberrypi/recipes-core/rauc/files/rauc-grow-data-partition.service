@@ -1,12 +1,12 @@
 [Unit]
 Description=Service to grow data partition size
 DefaultDependencies=no
-Before=app.mount
+Before=data.mount
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/usr/sbin/parted /dev/mmcblk0 resizepart 5 100%
+ExecStart=/bin/sh -c '/usr/bin/yes | /usr/sbin/parted /dev/mmcblk0 ---pretend-input-tty resizepart 4 100%' && /usr/lib/systemd/systemd-growfs /data
 
 [Install]
-WantedBy=app.mount
+WantedBy=data.mount
