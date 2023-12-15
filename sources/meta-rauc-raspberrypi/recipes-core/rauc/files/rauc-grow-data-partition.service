@@ -1,12 +1,12 @@
 [Unit]
 Description=Service to grow data partition size
 DefaultDependencies=no
-Before=data.mount
+Before=app.mount
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/sh -c '/usr/bin/yes | /usr/sbin/parted /dev/mmcblk0 ---pretend-input-tty resizepart 4 100%'
+ExecStart=/usr/sbin/parted /dev/mmcblk0 resizepart 5 100%
 
 [Install]
-WantedBy=data.mount
+WantedBy=app.mount
