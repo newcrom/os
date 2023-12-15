@@ -6,7 +6,7 @@ Before=data.mount
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/sh -c '/usr/bin/yes | /usr/sbin/parted /dev/mmcblk0 ---pretend-input-tty resizepart 4 100%' && /usr/lib/systemd/systemd-growfs /data
+ExecStart=/bin/sh -c '/usr/bin/yes | /usr/sbin/parted /dev/mmcblk0 ---pretend-input-tty resizepart 4 100% && /usr/lib/systemd/systemd-growfs /data'
 
 [Install]
 WantedBy=data.mount
