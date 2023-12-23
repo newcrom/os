@@ -15,7 +15,7 @@ S = "${WORKDIR}"
 FILES_${PN} += "/usr/local/bin/alltesta-init.sh \
                 ${systemd_unitdir}/system/alltesta-init.service"
 
-do_install_append() {
+do_install() {
     install -d ${D}/usr/local/bin
     install -m 0755 ${WORKDIR}/alltesta-init.sh ${D}/usr/local/bin/
 
