@@ -14,7 +14,7 @@ SRC_URI = "file://alltesta-init.sh \
 
 
 do_install:append() {
-    install -d ${D}/usr/local/bin
+    install -d ${D}${bindir}/
     install -m 0755 ${WORKDIR}/alltesta-init.sh ${D}${bindir}/
 
     install -d ${D}${systemd_unitdir}/system/
