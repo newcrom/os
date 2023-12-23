@@ -12,7 +12,10 @@ SRC_URI = "file://alltesta-init.sh \
 
 S = "${WORKDIR}"
 
-do_install() {
+FILES_${PN} += "/usr/local/bin/alltesta-init.sh \
+                ${systemd_unitdir}/system/alltesta-init.service"
+
+do_install_append() {
     install -d ${D}/usr/local/bin
     install -m 0755 ${WORKDIR}/alltesta-init.sh ${D}/usr/local/bin/
 
@@ -20,5 +23,4 @@ do_install() {
     install -m 0644 ${WORKDIR}/alltesta-init.service ${D}${systemd_unitdir}/system/
 }
 
-FILES_${PN} += "/usr/local/bin/alltesta-init.sh \
-                /etc/systemd/system/alltesta-init.service"
+
