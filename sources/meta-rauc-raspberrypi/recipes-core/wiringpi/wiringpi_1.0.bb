@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 FILESEXTRAPATHS:prepend:${PN} := "${THISDIR}/files:"
 
 SRC_URI = "file://libwiringPi.so"
-SRC_URI:append = "file://libwiringPiDev.so"
+SRC_URI:append = " file://libwiringPiDev.so"
 
 S = "${WORKDIR}"
 
