@@ -11,8 +11,8 @@ SYSTEMD_PACKAGES = "${PN}-service"
 SYSTEMD_AUTO_ENABLE = "enable"
 
 
-SRC_URI:append = "file://alltesta-init.sh"
-SRC_URI:append = "file://alltesta-init.service"
+SRC_URI = "file://alltesta-init.sh"
+SRC_URI:append = " file://alltesta-init.service"
 
 S = "${WORKDIR}"
 
