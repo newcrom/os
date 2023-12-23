@@ -1,0 +1,12 @@
+[Unit]
+Description=Alltesta Initialization Script
+Wants=network.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/alltesta-init.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
