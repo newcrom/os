@@ -11,8 +11,10 @@ SYSTEMD_PACKAGES = "${PN}-service"
 SYSTEMD_AUTO_ENABLE = "enable"
 
 
-SRC_URI = "file://alltesta-init.sh \
-           file://alltesta-init.service"
+SRC_URI:append = "file://alltesta-init.sh"
+SRC_URI:append = "file://alltesta-init.service"
+
+S = "${WORKDIR}"
 
 
 do_install:append() {
