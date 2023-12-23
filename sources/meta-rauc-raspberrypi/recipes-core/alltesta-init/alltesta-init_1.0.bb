@@ -10,6 +10,8 @@ SYSTEMD_SERVICE:${PN}-service = "alltesta-init.service"
 SYSTEMD_PACKAGES = "${PN}-service"
 SYSTEMD_AUTO_ENABLE = "enable"
 
+RDEPENDS:${PN}-service += "bash"
+
 
 SRC_URI = "file://alltesta-init.sh"
 SRC_URI:append = " file://alltesta-init.service"
