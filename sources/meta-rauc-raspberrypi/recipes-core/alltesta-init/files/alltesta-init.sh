@@ -38,14 +38,14 @@ fi
 # Check if serial.txt already exists before running the Python script
 echo "Checking for existing /data/root/serial.txt"
 if [ ! -f /data/root/serial.txt ]; then
-    curl -s https://get.chrom.app/device-get-serial.py | python3
-    if [ $? -ne 0 ]; then
-        echo "Failed to download or execute Python script" >&2
+    if python3 /usr/bin/device-get-serial.py; then
+        echo "Executed Python script successfully"
+    else
+        echo "Failed to execute Python script" >&2
         exit 1
     fi
-    echo "Downloaded and executed Python script"
 else
-    echo "/data/root/serial.txt already exists. Skipping download."
+    echo "/data/root/serial.txt already exists. Skipping Python script execution."
 fi
 
 # Read new hostname, check for existence
@@ -81,15 +81,6 @@ fi
 # Create directory if not exists
 echo "Creating directory /etc/rancher/k3s/"
 mkdir -p /etc/rancher/k3s/
-
-# Download configuration file safely
-echo "Downloading k3s configuration file"
-curl -s https://get.chrom.app/k3s-config.yaml -o /etc/rancher/k3s/config.yaml
-if [ ! -s /etc/rancher/k3s/config.yaml ]; then
-    echo "Failed to download k3s configuration file" >&2
-    exit 1
-fi
-echo "k3s configuration file downloaded"
 
 # Start and enable k3s-agent service, check if successful
 echo "Starting and enabling k3s-agent service"
