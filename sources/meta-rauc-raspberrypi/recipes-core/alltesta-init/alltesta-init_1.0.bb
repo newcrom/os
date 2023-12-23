@@ -4,7 +4,7 @@ LICENSE = "CLOSED"
 inherit systemd
 
 PACKAGES =+ "${PN}-service"
-SYSTEMD_SERVICE:${PN}}-service = "alltesta-init.service"
+SYSTEMD_SERVICE:${PN}-service = "alltesta-init.service"
 SYSTEMD_PACKAGES = "${PN}-service"
 SYSTEMD_AUTO_ENABLE = "enable"
 
