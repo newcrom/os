@@ -3,6 +3,8 @@ LICENSE = "CLOSED"
 
 inherit systemd
 
+FILESEXTRAPATHS:prepend:${PN}-service := "${THISDIR}/files:"
+
 PACKAGES =+ "${PN}-service"
 SYSTEMD_SERVICE:${PN}-service = "alltesta-init.service"
 SYSTEMD_PACKAGES = "${PN}-service"
@@ -20,6 +22,7 @@ do_install:append() {
     install -d ${D}${systemd_unitdir}/system/
     install -m 0644 ${WORKDIR}/alltesta-init.service ${D}${systemd_unitdir}/system/
 }
+
 
 FILES:${PN}-service = " \
     ${bindir}/alltesta-init.sh \
