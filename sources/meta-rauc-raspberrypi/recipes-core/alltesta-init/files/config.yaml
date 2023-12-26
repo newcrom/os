@@ -1,6 +1,6 @@
 token: K107cc7b8a049b1af38c286769b81d0513333d6f0d0184e1d37765181a85378d234::hbbu53.fp0e1ncp1sgfzr9z
-#server: https://device.cluster.hplc.cloud:6443
-server: https://52.15.170.122:6443
+server: https://device.cluster.hplc.cloud:6443
+#server: https://52.15.170.122:6443
 data-dir: /data/k3s/agent
 kubelet-arg:
   - 'root-dir=/data/k3s/kubelet'
